@@ -1,0 +1,297 @@
+{
+	"info": {
+		"_postman_id": "d594b9e0-aaca-4087-8826-05e6ccaa0cce",
+		"name": "62teknologi_backend",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Tests\" tab**\n\nTests help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/b5f280a7-4b09-48ec-857f-0a7ed99d7ef8/U2NyZWVuc2hvdCAyMDIzLTAzLTI3IGF0IDkuNDcuMjggUE0ucG5n\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) in \"Tests\" to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11059342"
+	},
+	"item": [
+		{
+			"name": "Business",
+			"item": [
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/business/search?latitude=40.7416907417333&longitude=-73.987207487225&radius=1000",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"business",
+								"search"
+							],
+							"query": [
+								{
+									"key": "location",
+									"value": "11 Madison Ave",
+									"disabled": true
+								},
+								{
+									"key": "latitude",
+									"value": "40.7416907417333"
+								},
+								{
+									"key": "longitude",
+									"value": "-73.987207487225"
+								},
+								{
+									"key": "radius",
+									"value": "1000"
+								},
+								{
+									"key": "open_now",
+									"value": "true",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"alias\":\"eleven-madison-park-new-york\",\r\n    \"name\": \"Eleven Madison Park\",\r\n    \"image_url\": \"https://s3-media1.fl.yelpcdn.com/bphoto/s_H7gm_Hwmz--O6bo1iU-A/o.jpg\",\r\n    \"is_closed\": false,\r\n    \"url\": \"https://www.yelp.com/biz/eleven-madison-park-new-york?adjust_creative=DSj6I8qbyHf-Zm2fGExuug&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DSj6I8qbyHf-Zm2fGExuug\",\r\n    \"review_count\": 2474,\r\n    \"categories\": [\r\n        {\r\n            \"alias\": \"newamerican\",\r\n            \"title\": \"New American\"\r\n        },\r\n        {\r\n            \"alias\": \"french\",\r\n            \"title\": \"French\"\r\n        },\r\n        {\r\n            \"alias\": \"cocktailbars\",\r\n            \"title\": \"Cocktail Bars\"\r\n        }\r\n    ],\r\n    \"rating\": 4.5,\r\n    \"latitude\": 40.7416907417333,\r\n    \"longitude\": -73.9872074872255,\r\n    \"transactions\": \"transactions,transactions\",\r\n    \"price\": \"$$$$\",\r\n    \"address1\": \"11 Madison Ave\",\r\n    \"address2\": \"\",\r\n    \"address3\": \"\",\r\n    \"city\": \"New York\",\r\n    \"zip_code\": \"10010\",\r\n    \"country\": \"US\",\r\n    \"state\": \"NY\",\r\n    \"phone\": \"+12128890905\",\r\n    \"display_phone\": \"(212) 889-0905\",\r\n    \"distance\": 4062.929570044286\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/business",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"business"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"alias\":\"eleven-madison-park-new-york\",\r\n    \"name\": \"Eleven Madison Park\",\r\n    \"image_url\": \"https://s3-media1.fl.yelpcdn.com/bphoto/s_H7gm_Hwmz--O6bo1iU-A/o.jpg\",\r\n    \"is_closed\": false,\r\n    \"url\": \"https://www.yelp.com/biz/eleven-madison-park-new-york?adjust_creative=DSj6I8qbyHf-Zm2fGExuug&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DSj6I8qbyHf-Zm2fGExuug\",\r\n    \"review_count\": 2474,\r\n    \"categories\": [\r\n        {\r\n            \"alias\": \"newamerican\",\r\n            \"title\": \"New American\"\r\n        },\r\n        {\r\n            \"alias\": \"french\",\r\n            \"title\": \"French\"\r\n        },\r\n        {\r\n            \"alias\": \"cocktailbars\",\r\n            \"title\": \"Cocktail Bars\"\r\n        }\r\n    ],\r\n    \"rating\": 4.5,\r\n    \"latitude\": 40.7416907417333,\r\n    \"longitude\": -73.9872074872255,\r\n    \"transactions\": \"transactions,transactions\",\r\n    \"price\": \"$$$$\",\r\n    \"address1\": \"Kuningan, Jakarta Selatan\",\r\n    \"address2\": \"\",\r\n    \"address3\": \"\",\r\n    \"city\": \"Jakarta\",\r\n    \"zip_code\": \"10010\",\r\n    \"country\": \"ID\",\r\n    \"state\": \"JKT\",\r\n    \"phone\": \"+12128890905\",\r\n    \"display_phone\": \"(212) 889-0905\",\r\n    \"distance\": 4062.929570044286\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/business/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"business",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "bb311a14-79d5-4c80-bb03-58a8c28937fa"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"alias\":\"eleven-madison-park-new-york\",\r\n    \"name\": \"Eleven Madison Park\",\r\n    \"image_url\": \"https://s3-media1.fl.yelpcdn.com/bphoto/s_H7gm_Hwmz--O6bo1iU-A/o.jpg\",\r\n    \"is_closed\": false,\r\n    \"url\": \"https://www.yelp.com/biz/eleven-madison-park-new-york?adjust_creative=DSj6I8qbyHf-Zm2fGExuug&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=DSj6I8qbyHf-Zm2fGExuug\",\r\n    \"review_count\": 2474,\r\n    \"categories\": [\r\n        {\r\n            \"alias\": \"newamerican\",\r\n            \"title\": \"New American\"\r\n        },\r\n        {\r\n            \"alias\": \"french\",\r\n            \"title\": \"French\"\r\n        },\r\n        {\r\n            \"alias\": \"cocktailbars\",\r\n            \"title\": \"Cocktail Bars\"\r\n        }\r\n    ],\r\n    \"rating\": 4.5,\r\n    \"latitude\": 40.7416907417333,\r\n    \"longitude\": -73.9872074872255,\r\n    \"transactions\": \"transactions,transactions\",\r\n    \"price\": \"$$$$\",\r\n    \"address1\": \"11 Madison Ave\",\r\n    \"address2\": \"\",\r\n    \"address3\": \"\",\r\n    \"city\": \"New York\",\r\n    \"zip_code\": \"10010\",\r\n    \"country\": \"US\",\r\n    \"state\": \"NY\",\r\n    \"phone\": \"+12128890905\",\r\n    \"display_phone\": \"(212) 889-0905\",\r\n    \"distance\": 4062.929570044286\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/business/:id",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"business",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "450619a9-6b23-4929-ab95-b619be4fa457"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"full_name\": \"Muhammad Aqil Al-Muhtadi\",\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"register"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"if(pm.response.code == 200) {",
+							"var res = JSON.parse(responseBody)",
+							"if (res.data.access_token) {",
+							"pm.environment.set(\"token\", res.data.access_token);",
+							"}",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"12345678\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				},
+				"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}
